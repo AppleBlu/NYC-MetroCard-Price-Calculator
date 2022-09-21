@@ -1,20 +1,24 @@
+# importing modules and files
 import customer
 import metro_card
 import art
-import os
 
+# checking if the machine is on
 is_on = True
 
+# creating a function to see if the user is finished or not
 def user_choice2():
     global is_on
     user_option = input("Are you finished?(yes/no): ")
     if user_option == 'yes':
+        print("Thank you and hope to see you soon!")
         exit()
     elif user_option == 'no':
         application()
     else:
         print('Sorry try again')
 
+# creating a function to see if the user wants to continue or not
 def user_choice():
     global is_on
     user_option = input("Do you want to continue?(yes/no): ")
@@ -25,9 +29,8 @@ def user_choice():
         exit()
     else:
         print('Sorry try again')
-        
-
-
+    
+# creating the application with the menu that the user can interact with
 def application():
     while is_on:
         print(art.metro_menu)
