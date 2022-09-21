@@ -1,16 +1,15 @@
+# importing modules
+from functools import total_ordering
 import metro_card
+from datetime import datetime
 
-
+# creating a class for all things related to the customer
 class Customer:
+# creating class varibles for the customer
     money_in_cash = 30
     card_pin_number = '123456789'
-    
 
-    def __init__(self):
-        self.ticket_amount = None
-
-
-
+# creating a function that runs through the process of purchasing a ticket    
     def purchase_tickets():
         
         ticket_amount = input("How many tickets do you want to buy?: ")
@@ -44,21 +43,16 @@ class Customer:
             print('Please restart the process \nProgram restarting...')
             exit()
 
-
+# printing a recipet
+        now = datetime.now()
+        amount = metro_card.MetroCard.price_of_ticket.get(ticket_location.title())
+        total_amount = amount * int(ticket_amount)
         print(input('Press enter to print recipet'))
         print('Please hold while your recipet is printed...')
         print('\n----------------------------\n')
-        print('One way ticket to: {destination}\n'.format(destination = title_location))
-        print('Purchased on: ####')
-        print('Valid till: ####')
-        print('Amount paid: #### using ####')
+        print('One way ticket to: {destination} x {tic}\n'.format(destination = title_location, tic = ticket_amount))
+        print('Purchased: ' + str(now))
+        print('Valid till: 24 hours after purchase')
+        print('Amount paid: £{amount} using {pay}'. format(amount = total_amount, pay = payment_method))
+        print('\n')
         print('----------------------------')
-
-
-
-
-        #add time
-        #add 2way
-        #add card fee
-        #add wrong number of tickets
-        # print multiple recipets for multiple tickets selected
